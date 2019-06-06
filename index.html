@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<input type="" class="search">
+		<button class="btn btn-success">Поиск </button>
+		<div class="row">
+		
+		</div>
+	
+	</div>
+<script>
+	let row = document.querySelector(".row");
+	let search = document.querySelector(".search");
+	let btn = document.querySelector(".btn");
+
+
+
+	let array =[
+		{
+			name:"куртка",
+			price:10000,
+			url:"kurtka.jpg",
+			brand:"h&m",
+			size:"M",
+			gender:"female"
+		},
+		
+		{
+			name:"джинсы",
+			price:8000,
+			url:"5.jpg",
+			brand:"levis",
+			size:"L",
+			gender:"male"
+		},
+		{
+			name:"джинсы",
+			price:2500,
+			url:"jeanse1.jpg",
+			brand:"zara",
+			size:"M",
+			gender:"female"
+
+		},
+		{
+			name:"джинсы",
+			price:3500,
+			url:"jeanse2.jpg",
+			brand:"zara",
+			size:"L",
+			gender:"female"
+
+		},
+		{
+			name:"футболка",
+			price:1200,
+			url:"tshirt2.jpg",
+			brand:"asics",
+			size:"L",
+			gender:"male"
+
+		},
+		{
+			name:"футболка",
+			price:900,
+			url:"tshirt.jpg",
+			brand:"h&m",
+			size:"XS",
+			gender:"female"
+
+		},
+		{
+			name:"куртка",
+			price:15000,
+			url:"20.jpg",
+			brand:"the north face",
+			size:"L",
+			gender:"male"
+
+		},
+		{
+			name:"шапка",
+			price:900,
+			url:"9.jpg",
+			brand:"nike",
+			size:"nosize",
+			gender:"male"
+		},
+		{
+			name:"носки",
+			price:500,
+			url:"socks.jpg",
+			brand:"bonprix",
+			size:"nosize",
+			gender:"male"
+
+		},
+
+	];
+
+
+	btn.onclick = function () {
+		row.innerHTML = ""
+	for(let index = 0; index<9; index = index + 1){//цикл
+		if(search.value == array[index].gender || search.value == array[index].size || search.value == array[index].name || search.value == array[index].price || search.value == array[index].brand  ){
+	
+
+	let elem = document.createElement("div")
+	row.appendChild(elem)
+	elem.classList.add("col-3")
+
+	let img = document.createElement("img")
+	elem.appendChild(img)
+	img.src = array[index].url
+	img.classList.add("w-100")
+
+	let name = document.createElement("h4")
+	elem.appendChild(name)
+	name.innerHTML = array[index].name
+
+	let price = document.createElement("h4")
+	elem.appendChild(price)
+	price.innerHTML = 'Цена:'+array[index].price
+
+	let brand = document.createElement("h5")
+	elem.appendChild(brand)
+	brand.innerHTML = 'Бренд:' + array[index].brand
+
+	let size = document.createElement("h5")
+	elem.appendChild(size)
+	size.innerHTML = 'Размер:' + array[index].size
+
+	let gender = document.createElement("h5")
+	elem.appendChild(gender)
+	gender.innerHTML = 'Пол:'+ array[index].gender
+}
+
+}
+	}
+
+for(let index = 0; index<9; index = index + 1){//цикл
+	
+
+	//if ( array[index].price>=500 && array[index].price<=1500) {
+		let elem = document.createElement("div")
+	row.appendChild(elem)
+	elem.classList.add("col-3")
+
+	let img = document.createElement("img")
+	elem.appendChild(img)
+	img.src = array[index].url
+	img.classList.add("w-100")
+
+	let name = document.createElement("h4")
+	elem.appendChild(name)
+	name.innerHTML = array[index].name
+
+	let price = document.createElement("h4")
+	elem.appendChild(price)
+	price.innerHTML = 'Цена:'+array[index].price
+
+	let brand = document.createElement("h5")
+	elem.appendChild(brand)
+	brand.innerHTML = 'Бренд:' + array[index].brand
+
+	let size = document.createElement("h5")
+	elem.appendChild(size)
+	size.innerHTML = 'Размер:' + array[index].size
+
+	let gender = document.createElement("h5")
+	elem.appendChild(gender)
+	gender.innerHTML = 'Пол:'+ array[index].gender
+} 
+//}
+
+</script>
+</body>
+</html>
